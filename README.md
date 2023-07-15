@@ -6,9 +6,9 @@ This is a repo which contains my personal portfolio and displays various project
 
 ## Installation
 You may run this app locally by following these steps:
-`git clone https://github.com/EdwinBayingana/portfolio.git`
-`npm i`
-`npm dev`
+`git clone https://github.com/EdwinBayingana/portfolio.git
+npm i
+npm dev`
 
 ## Tech Stack
 - [x] TypeScript
