@@ -1,4 +1,3 @@
-// data
 const workSlides = {
   slides: [
     {
@@ -43,9 +42,41 @@ const workSlides = {
     },
   ],
 };
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper';
+
+import 'swiper/css';
+import 'swiper/css/free-mode';
+import 'swiper/css/pagination';
+
+import { BsArrowRight } from 'react-icons/bs';
 
 const WorkSlider = () => {
-  return <div>Work Slider</div>;
+  return (
+    <Swiper
+      breakpoints={{
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 15,
+        },
+
+        640: {
+          slidesPerView: 3,
+          spaceBetween: 15,
+        },
+      }}
+      freeMode={true}
+      pagination={{
+        clickable: true,
+      }}
+      modules={[Pagination]}
+      className="h-[240px] md:h-[340px]"
+    >
+      {workSlides.slides.map((slide, index) => {
+        return <SwiperSlide key={index}>slide</SwiperSlide>;
+      })}
+    </Swiper>
+  );
 };
 
 export default WorkSlider;
