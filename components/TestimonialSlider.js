@@ -25,57 +25,54 @@ const testimonialData = [
 
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from 'swiper';
-import { BsArrowRight } from 'react-icons/bs';
+import { Navigation, Pagination } from 'swiper';
+import { FaQuoteLeft } from 'react-icons/fa';
 
 import 'swiper/css';
-import 'swiper/css/free-mode';
+import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 const TestimonialSlider = () => {
   return (
     <Swiper
+      navigation={true}
       spaceBetween={10}
       pagination={{
         clickable: true,
       }}
-      modules={[Pagination]}
-      className="h-[280px] md:h-[480px]"
+      modules={[Navigation, Pagination]}
+      className="h-[400px]"
     >
-      {testimonialData.map((slide, index) => {
+      {testimonialData.map((person, index) => {
         return (
           <SwiperSlide key={index}>
-            <div className="grid grid-cols-2 grid-rows-2 gap-4 cursor-pointer">
-              {slide.images.map((image, index) => {
-                return (
-                  <div className="relative rounded-lg overflow-hidden flex items-center justify-center group">
-                    <div
-                      className="flex items-center justify-center relative overflow-hidden group"
-                      key={index}
-                    >
-                      {/* image */}
-                      <Image src={image.path} width={500} height={300} alt="" />
-                      {/* overlay gradient */}
-                      <div className="absolute inset-0 bg-gradient-to-l from-transparent via-[#e838cc] to-[#4a22bd] opacity-0 group-hover:opacity-80 transition-all duration-700"></div>
-                      {/* title */}
-                      <div className="absolute bottom-0 translate-y-full group-hover:-translate-y-10 group-hover:xl:-translate-y-20 transition-all duration-300">
-                        <div className="flex items-center gap-x-2 text-[13px] tracking-[0.2em]">
-                          {/* title part 1 */}
-                          <div className="delay-100">LIVE</div>
-                          {/* title part 2 */}
-                          <div className="translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 delay-150">
-                            PROJECT
-                          </div>
-                          {/* icon */}
-                          <div className="text-xl translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 delay-200">
-                            <BsArrowRight />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+            <div className="flex flex-col items-center md:flex-row gap-x-8 h-full px-16">
+              {/* avatar, name, position */}
+              <div className="w-full max-w-[300px] flex flex-col xl:justify-center items-center relative mx-auto xl:mx-0">
+                <div className="flex flex-col justify-center text-center">
+                  {/* avatar */}
+                  <div className="mb-2 mx-auto">
+                    <Image src={person.image} width={100} height={100} alt="" />
                   </div>
-                );
-              })}
+                  {/* name */}
+                  <div className="text-lg">{person.name}</div>
+                  {/* position */}
+                  <div className="text-[12px] uppercase font-extralight tracking-widest">
+                    {person.position}
+                  </div>
+                </div>
+              </div>
+              {/* quote & message */}
+              <div className="flex-1 flex flex-col justify-center before:w-[1px] xl:before:bg-white/20 xl:before:absolute xl:before:left-0 xl:before:h-[200px] relative xl:pl-20">
+                {/* quote icon */}
+                <div className="mb-4">
+                  <FaQuoteLeft className="text-4xl xl:text-6xl text-white/20 mx-auto md:mx-0" />
+                </div>
+                {/* message */}
+                <div className="xl:text-lg text-center md:text-left">
+                  {person.message}
+                </div>
+              </div>
             </div>
           </SwiperSlide>
         );
