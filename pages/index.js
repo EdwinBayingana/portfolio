@@ -21,8 +21,11 @@ const Home = () => {
             exit="hidden"
             className="h1"
           >
-            Transforming Ideas <br />
-            Into <span className="text-accent"> Digital Reality</span>
+            <p className="animate-pulse text-3xl">
+              🚨 The Home Page is still&nbsp;
+              <span className="text-accent italic">under construction</span>...
+              🚧
+            </p>
           </motion.h1>
           {/* subtitle */}
           <motion.p
@@ -36,6 +39,8 @@ const Home = () => {
             molestie, feugiat metus eu, volutpat mi. Suspendisse imperdiet
             viverra augue, vitae elementum dolor feugiat in. Morbi vestibulum
             tempus neque, semper faucibus tellus vulputate eget.
+            <br />
+            <br />
           </motion.p>
           {/* btn */}
           <div className="flex justify-center xl:hidden relative">
