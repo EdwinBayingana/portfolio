@@ -14,21 +14,23 @@ const Socials = () => {
   const linkStyles = 'hover:text-accent transition-all duration-300';
   return (
     <div className="flex items-center gap-x-5 text-lg">
-      <Link href={''} className={linkStyles}>
+      <Link href="https://github.com/EdwinBayingana" className={linkStyles}>
         <RiGithubLine />
       </Link>
-      <Link href={''} className={linkStyles}>
+      <Link href="mailto:bayinganaedwin@gmail.com" className={linkStyles}>
         <BiLogoGmail />
       </Link>
-      <Link href={''} className={linkStyles}>
+      <Link href="https://www.instagram.com/edwin.z_10" className={linkStyles}>
         <RiInstagramLine />
       </Link>
       <Link href={''} className={linkStyles}>
         <CiLinkedin />
       </Link>
+
       {/* <Link href={''} className={linkStyles}>
         <RiTwitterLine />
       </Link> */}
+
       {/* <Link href={''} className={linkStyles}>
         <BiLogoWhatsapp />
       </Link> */}
